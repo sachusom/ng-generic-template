@@ -7,7 +7,6 @@ import { DecimalNumberDirective } from './decimal-number.directive';
 import { DisabledDirective } from './disabled.directive';
 import { DisplayNoneDirective } from './display-none.directive';
 import { FileDragDropDirective } from './file-drag-drop.directive';
-import { MinMaxDirective } from './min-max.directive';
 
 const exportable = [
   AllowOnlyNumbersDirective,
@@ -16,7 +15,6 @@ const exportable = [
   BackButtonDirective,
   DisabledDirective,
   DecimalNumberDirective,
-  MinMaxDirective,
   DisplayNoneDirective
 ];
 

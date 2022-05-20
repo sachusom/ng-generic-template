@@ -7,7 +7,7 @@ import { ModalService } from '../../services/modal.service';
   templateUrl: './copy-to-clipboard.component.html',
   styleUrls: ['./copy-to-clipboard.component.scss']
 })
-export class CopyToClipboardComponent implements OnInit {
+export class CopyToClipboardComponent {
 
   /* I/O Properties */
   @Input() url: string = '';
@@ -17,10 +17,6 @@ export class CopyToClipboardComponent implements OnInit {
     private clipboard: Clipboard,
     private modalService: ModalService
   ) { }
-
-  /* Life Cycle Hooks */
-  ngOnInit(): void {
-  }
 
   /* Public Methods */
   copyToClipBoard(): void {

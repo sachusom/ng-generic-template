@@ -7,7 +7,7 @@ import { MatBottomSheetRef, MAT_BOTTOM_SHEET_DATA } from '@angular/material/bott
   templateUrl: './validation-sheet.component.html',
   styleUrls: ['./validation-sheet.component.scss']
 })
-export class ValidationSheetComponent implements OnInit {
+export class ValidationSheetComponent {
 
   form: FormGroup;
   messages: any;
@@ -19,9 +19,6 @@ export class ValidationSheetComponent implements OnInit {
     this.form = data.formGroup;
     this.messages = data.validationMessages;
     this.composer();
-  }
-
-  ngOnInit(): void {
   }
 
   /* Public Methods */

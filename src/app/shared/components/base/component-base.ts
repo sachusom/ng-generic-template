@@ -1,11 +1,11 @@
 import { DatePipe } from '@angular/common';
-import { Directive, OnDestroy } from '@angular/core';
+import { Directive, OnDestroy, OnInit } from '@angular/core';
 import { Subject } from 'rxjs';
 import { AppConfig } from 'src/app/core/configs';
 import { AppInjector } from 'src/app/core/services/app-injector.service';
 
 @Directive()
-export abstract class ComponentBase implements OnDestroy {
+export abstract class ComponentBase implements OnInit, OnDestroy {
 
   /* Public Properties */
   destroy$: Subject<boolean> = new Subject<boolean>();
