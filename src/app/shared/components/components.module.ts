@@ -1,17 +1,15 @@
-import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { MaterialModule } from '../modules/material.module';
 import { NoRecordsMessageComponent } from './no-records-message/no-records-message.component';
 
 const exportable = [
-  NoRecordsMessageComponent
+  NoRecordsMessageComponent,
 ];
 
 @NgModule({
   declarations: exportable,
   imports: [
-    CommonModule,
-    MaterialModule
+    MaterialModule,
   ],
   exports: exportable,
 })

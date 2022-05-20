@@ -3,7 +3,7 @@ import { FormArray, FormControl, FormGroup } from '@angular/forms';
 import { MatBottomSheetRef, MAT_BOTTOM_SHEET_DATA } from '@angular/material/bottom-sheet';
 
 @Component({
-  selector: 'sxp-validation-sheet',
+  selector: 'nggt-validation-sheet',
   templateUrl: './validation-sheet.component.html',
   styleUrls: ['./validation-sheet.component.scss']
 })

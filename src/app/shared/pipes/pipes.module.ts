@@ -22,6 +22,6 @@ const exportable = [
     CommonModule
   ],
   exports: exportable,
-  providers: exportable
+  providers: inbuiltPipes
 })
 export class PipesModule { }

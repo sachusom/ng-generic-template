@@ -1,3 +1,5 @@
+
+import { DatePipe } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { ComponentsModule } from './components/components.module';
 import { DirectivesModule } from './directives/directives.module';
@@ -14,5 +16,6 @@ const exportable = [
 @NgModule({
   imports: exportable,
   exports: exportable,
+  providers: [DatePipe]
 })
 export class SharedModule { }

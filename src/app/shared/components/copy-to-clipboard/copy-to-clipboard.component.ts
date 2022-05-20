@@ -3,7 +3,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ModalService } from '../../services/modal.service';
 
 @Component({
-  selector: 'sxp-copy-to-clipboard',
+  selector: 'nggt-copy-to-clipboard',
   templateUrl: './copy-to-clipboard.component.html',
   styleUrls: ['./copy-to-clipboard.component.scss']
 })
