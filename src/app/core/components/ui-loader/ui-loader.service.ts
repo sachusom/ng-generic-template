@@ -6,18 +6,17 @@ import { Subject } from 'rxjs';
 })
 export class UiLoaderService {
 
-  private loaderVisibility = new Subject<boolean>();
-  loaderVisibility$ = this.loaderVisibility.asObservable();
+  loaderVisibility$ = new Subject<boolean>();
   loaderText!: string | null;
 
   constructor() { }
 
   start(text: string | null = 'loading...'): void {
     this.loaderText = text;
-    this.loaderVisibility.next(true);
+    this.loaderVisibility$.next(true);
   }
 
   stop(): void {
-    this.loaderVisibility.next(false);
+    this.loaderVisibility$.next(false);
   }
 }

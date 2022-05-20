@@ -1,5 +1,5 @@
-import { NgModule, Optional, SkipSelf } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule, Optional, SkipSelf } from '@angular/core';
 import { UiLoaderComponent } from './components/ui-loader/ui-loader.component';
 
 @NgModule({
@@ -8,7 +8,8 @@ import { UiLoaderComponent } from './components/ui-loader/ui-loader.component';
   ],
   imports: [
     CommonModule
-  ]
+  ],
+  exports: [UiLoaderComponent]
 })
 export class CoreModule {
 

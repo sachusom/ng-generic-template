@@ -26,6 +26,7 @@ export class UiLoaderComponent implements OnInit {
   private subscribeEvents(): void {
     this.uiLoaderService.loaderVisibility$
       .subscribe((visibility: boolean) => {
+        debugger;
         this.loaderText = this.uiLoaderService.loaderText;
         this.showLoader = visibility;
       });

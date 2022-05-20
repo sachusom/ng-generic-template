@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
 import { ComponentBase } from '@shared/components/base/component-base';
+import { UiLoaderService } from '@core/components/ui-loader/ui-loader.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -32,14 +33,16 @@ export class DashboardComponent extends ComponentBase {
   );
 
   constructor(
-    private breakpointObserver: BreakpointObserver
+    private breakpointObserver: BreakpointObserver,
+    private uiLoaderService: UiLoaderService
   ) {
     super();
   }
 
   /* Public Methods */
   pageInitVariables(): void {
-
+    debugger;
+    this.uiLoaderService.start();
   }
 
   pageSubscribeEvents(): void {
