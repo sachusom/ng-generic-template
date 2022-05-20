@@ -51,7 +51,8 @@ export class CommunicationService {
       return of(cachedResponse) as unknown as Observable<T>;
     } else {
       if (showLoader) { this.showLoader(loaderText); }
-      return this.getClient(hasAuth).get<T>(apiPath, options ?? new HttpHeaders())
+      return this.getClient(hasAuth)
+        .get<T>(apiPath, options ?? new HttpHeaders())
         .pipe(
           tap((response: any) => {
             if (doCache) {
@@ -71,7 +72,8 @@ export class CommunicationService {
     const showLoader = loaderText ? true : false;
 
     if (showLoader) { this.showLoader(loaderText); }
-    return this.getClient(hasAuth).post<any>(apiPath, data, options ?? new HttpHeaders())
+    return this.getClient(hasAuth)
+      .post<any>(apiPath, data, options ?? new HttpHeaders())
       .pipe(
         tap((response: any) => {
           if (showLoader) { this.hideLoader(); }
@@ -86,7 +88,8 @@ export class CommunicationService {
   put<T>(apiPath: string, data: any, options: any = null, loaderText: string | any = null, hasAuth: boolean = true): Observable<T> {
     const showLoader = loaderText ? true : false;
     if (showLoader) { this.showLoader(loaderText); }
-    return this.getClient(hasAuth).put<any>(apiPath, data, options ?? new HttpHeaders())
+    return this.getClient(hasAuth)
+      .put<any>(apiPath, data, options ?? new HttpHeaders())
       .pipe(
         tap((response: any) => {
           if (showLoader) { this.hideLoader(); }
@@ -101,7 +104,8 @@ export class CommunicationService {
   patch<T>(apiPath: string, data: any, options: any = null, loaderText: string | any = null, hasAuth: boolean = true): Observable<T> {
     const showLoader = loaderText ? true : false;
     if (showLoader) { this.showLoader(loaderText); }
-    return this.getClient(hasAuth).patch<any>(apiPath, data, options ?? new HttpHeaders())
+    return this.getClient(hasAuth)
+      .patch<any>(apiPath, data, options ?? new HttpHeaders())
       .pipe(
         tap((response: any) => {
           if (showLoader) { this.hideLoader(); }
@@ -116,7 +120,8 @@ export class CommunicationService {
   delete<T>(apiPath: string, options: any = null, loaderText: string | any = null, hasAuth: boolean = true): Observable<T> {
     const showLoader = loaderText ? true : false;
     if (showLoader) { this.showLoader(loaderText); }
-    return this.getClient(hasAuth).delete<T>(apiPath)
+    return this.getClient(hasAuth)
+      .delete<T>(apiPath)
       .pipe(
         tap((data: T) => {
           if (showLoader) { this.hideLoader(); }

@@ -33,16 +33,13 @@ export class DashboardComponent extends ComponentBase {
   );
 
   constructor(
-    private breakpointObserver: BreakpointObserver,
-    private uiLoaderService: UiLoaderService
+    private breakpointObserver: BreakpointObserver
   ) {
     super();
   }
 
   /* Public Methods */
   pageInitVariables(): void {
-    debugger;
-    this.uiLoaderService.start();
   }
 
   pageSubscribeEvents(): void {
