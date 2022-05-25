@@ -1,15 +1,15 @@
 import { CommonModule } from '@angular/common';
 import { NgModule, Optional, SkipSelf } from '@angular/core';
-import { UiLoaderComponent } from './components/ui-loader/ui-loader.component';
+import { AppLoaderComponent } from './components/app-loader/app-loader.component';
 
 @NgModule({
   declarations: [
-    UiLoaderComponent
+    AppLoaderComponent
   ],
   imports: [
     CommonModule
   ],
-  exports: [UiLoaderComponent]
+  exports: [AppLoaderComponent]
 })
 export class CoreModule {
 

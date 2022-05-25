@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { UiLoaderService } from './ui-loader.service';
+import { AppLoaderService } from '@core/services/app-loader.service';
 
 @Component({
-  selector: 'nggt-ui-loader',
-  templateUrl: './ui-loader.component.html',
-  styleUrls: ['./ui-loader.component.scss']
+  selector: 'nggt-app-loader',
+  templateUrl: './app-loader.component.html',
+  styleUrls: ['./app-loader.component.scss']
 })
-export class UiLoaderComponent implements OnInit {
+export class AppLoaderComponent implements OnInit {
 
   /* Public Properties */
   showLoader = false;
@@ -14,7 +14,7 @@ export class UiLoaderComponent implements OnInit {
 
   /* Constructor */
   constructor(
-    private uiLoaderService: UiLoaderService
+    private appLoaderService: AppLoaderService
   ) { }
 
   /* Life Cycle Hooks */
@@ -24,9 +24,9 @@ export class UiLoaderComponent implements OnInit {
 
   /* Private Methods */
   private subscribeEvents(): void {
-    this.uiLoaderService.loaderVisibility$
+    this.appLoaderService.loaderVisibility$
       .subscribe((visibility: boolean) => {
-        this.loaderText = this.uiLoaderService.loaderText;
+        this.loaderText = this.appLoaderService.loaderText;
         this.showLoader = visibility;
       });
   }

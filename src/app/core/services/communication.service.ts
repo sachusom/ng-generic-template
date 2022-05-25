@@ -7,7 +7,7 @@ import { HttpBackend, HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of, throwError } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
-import { UiLoaderService } from '../components/ui-loader/ui-loader.service';
+import { AppLoaderService } from './app-loader.service';
 import { RequestCacheService } from './request-cache.service';
 
 @Injectable({
@@ -23,7 +23,7 @@ export class CommunicationService {
   constructor(
     private httpClient: HttpClient,
     httpBackend: HttpBackend,
-    private uiLoaderService: UiLoaderService,
+    private appLoaderService: AppLoaderService,
     private cacheService: RequestCacheService
   ) {
     this.httpBackendClient = new HttpClient(httpBackend);
@@ -136,14 +136,14 @@ export class CommunicationService {
   /* Private Methods */
   private showLoader(loaderText: string): void {
     if (this.callStackCount === 0) {
-      this.uiLoaderService.start(loaderText);
+      this.appLoaderService.start(loaderText);
     }
     this.callStackCount++;
   }
 
   private hideLoader(): void {
     if (this.callStackCount === 1) {
-      this.uiLoaderService.stop();
+      this.appLoaderService.stop();
     }
     if (this.callStackCount > 0) {
       this.callStackCount--;

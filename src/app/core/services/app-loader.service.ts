@@ -4,7 +4,7 @@ import { Subject } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class UiLoaderService {
+export class AppLoaderService {
 
   loaderVisibility$ = new Subject<boolean>();
   loaderText!: string | null;

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { SharedModule } from '@shared/shared.module';
+import { DashboardComponent } from './containers/dashboard/dashboard.component';
 import { DashboardRoutingModule } from './dashboard-routing.module';
-import { DashboardComponent } from './dashboard.component';
 
 @NgModule({
   declarations: [
