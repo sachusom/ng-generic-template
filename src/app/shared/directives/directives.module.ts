@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { AllowOnlyAlphabetsDirective } from './allow-only-alphabets.directive';
 import { AllowOnlyNumbersDirective } from './allow-only-numbers.directive';
 import { BackButtonDirective } from './back-button.directive';
+import { DebounceClickDirective } from './debounce-click.directive';
 import { DecimalNumberDirective } from './decimal-number.directive';
 import { DisabledDirective } from './disabled.directive';
 import { DisplayNoneDirective } from './display-none.directive';
@@ -19,7 +20,8 @@ const exportable = [
   DecimalNumberDirective,
   DisplayNoneDirective,
   FullScreenDirective,
-  MarkIfRequiredDirective
+  MarkIfRequiredDirective,
+  DebounceClickDirective
 ];
 
 @NgModule({
