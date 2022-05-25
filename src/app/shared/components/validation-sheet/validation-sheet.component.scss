@@ -1,38 +1,45 @@
 @import "theme-children";
-ul{
+
+ul {
     margin: 0;
     padding: 0px 12px;
     list-style: none;
-    li{
+
+    li {
         background: rgb(255 59 108 / 17%);
         padding: 5px 8px;
         margin-bottom: 5px;
         border-radius: 20px;
         font-size: 13px;
         color: #c70000;
-        i{
+
+        i {
             margin-right: 3px;
         }
-        &:last-child{
+
+        &:last-child {
             margin-bottom: 0px;
         }
     }
 }
-.close-icon{
+
+.close-icon {
     position: absolute;
     right: 7px;
     top: -37px;
     font-size: 26px;
     cursor: pointer;
-    &:hover{
+
+    &:hover {
         @include themify($themes) {
-            color: themed("base-color") ;
+            color: themed("base-color");
         }
     }
 }
-.validation-sheet-container{
-    max-height: 249px; 
-    overflow-y: auto; 
+
+.validation-sheet-container {
+    max-height: 249px;
+    overflow-y: auto;
     margin-top: 40px;
     margin-bottom: 8px;
 }

@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { NoRecordsMessageComponent } from './no-records-message.component';
 
 describe('NoRecordsMessageComponent', () => {
@@ -8,9 +7,9 @@ describe('NoRecordsMessageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NoRecordsMessageComponent ]
+      declarations: [NoRecordsMessageComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {
