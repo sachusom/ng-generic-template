@@ -10,11 +10,11 @@ export const NavigationItems: NavigationItem[] = [
         url: 'profile'
     },
     {
-        text: 'Dev Guide',
-        url: 'dev-guide'
-    },
-    {
         text: 'Users',
         url: 'users'
+    },
+    {
+        text: 'Dev Guide',
+        url: 'dev-guide'
     }
 ];
