@@ -38,10 +38,11 @@ export class DashboardComponent extends ComponentBase {
   }
 
   /* Public Methods */
-  pageInitVariables(): void {
-  }
+  pageInitVariables(): void { }
 
-  pageSubscribeEvents(): void {
+  pageSubscribeEvents(): void { }
 
-  }
+  pageLoadData(): void { }
+
+  pageUnLoad(): void { }
 }

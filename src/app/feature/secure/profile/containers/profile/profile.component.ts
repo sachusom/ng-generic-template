@@ -8,6 +8,7 @@ import { ComponentBase } from '@shared/abstracts/component-base';
 })
 export class ProfileComponent extends ComponentBase implements OnInit {
 
+
   constructor() {
     super();
   }
@@ -18,11 +19,11 @@ export class ProfileComponent extends ComponentBase implements OnInit {
   }
 
   /* Public Methods */
-  pageInitVariables(): void {
-    throw new Error('Method not implemented.');
-  }
+  pageInitVariables(): void { }
 
-  pageSubscribeEvents(): void {
-    throw new Error('Method not implemented.');
-  }
+  pageSubscribeEvents(): void { }
+
+  pageLoadData(): void { }
+
+  pageUnLoad(): void { }
 }

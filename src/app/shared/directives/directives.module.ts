@@ -8,6 +8,7 @@ import { DisabledDirective } from './disabled.directive';
 import { DisplayNoneDirective } from './display-none.directive';
 import { FileDragDropDirective } from './file-drag-drop.directive';
 import { FullScreenDirective } from './full-screen.directive';
+import { MarkIfRequiredDirective } from './mark-if-required.directive';
 
 const exportable = [
   AllowOnlyNumbersDirective,
@@ -17,7 +18,8 @@ const exportable = [
   DisabledDirective,
   DecimalNumberDirective,
   DisplayNoneDirective,
-  FullScreenDirective
+  FullScreenDirective,
+  MarkIfRequiredDirective
 ];
 
 @NgModule({

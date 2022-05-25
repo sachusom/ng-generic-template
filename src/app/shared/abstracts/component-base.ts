@@ -22,16 +22,22 @@ export abstract class ComponentBase implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.pageInitVariables();
     this.pageSubscribeEvents();
+    this.pageLoadData();
   }
 
   ngOnDestroy(): void {
     this.destroyBase();
+    this.pageUnLoad();
   }
 
   /* Protected Methods */
   abstract pageInitVariables(): void;
 
   abstract pageSubscribeEvents(): void;
+
+  abstract pageLoadData(): void;
+
+  abstract pageUnLoad(): void;
 
   /* Public Methods */
   formatDate(date: Date | string | null): any {
