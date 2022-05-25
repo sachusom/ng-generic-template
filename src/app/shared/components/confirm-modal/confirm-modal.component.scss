@@ -15,63 +15,6 @@
   .message-icon {
     width: 80px;
     height: 80px;
-    // background: url(./../../../assets/images/sxp-sprite.png) no-repeat 0px -162px;
-  }
-}
-
-.success {
-  .message-icon {
-    width: 69px;
-    height: 69px;
-    // background: url(./../../../assets/images/sxp-sprite.png) no-repeat -122px -172px;
-  }
-}
-
-.info {
-  .message-icon {
-    width: 69px;
-    height: 69px;
-    // background: url(./../../../assets/images/sxp-sprite.png) no-repeat -294px -174px;
-  }
-}
-
-.alert {
-  .message-icon {
-    width: 69px;
-    height: 69px;
-    //  background: url(./../../../assets/images/sxp-sprite.png) no-repeat -389px -174px;
-  }
-}
-
-.error {
-  .message-icon {
-    width: 69px;
-    height: 69px;
-    // background: url(./../../../assets/images/sxp-sprite.png) no-repeat -207px -172px;
-  }
-
-  .message-txt {
-    color: #d63b0e;
-  }
-}
-
-::ng-deep {
-  .mat-dialog-container {
-    padding: 0;
-    box-shadow: none;
-    background-color: transparent;
-
-    .confirm-container {
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      .form-column {
-        padding: 24px;
-        border-radius: 4px;
-        background-color: #ffffff;
-      }
-    }
+    background: url(./../../../../assets/images/sprite.png) no-repeat 0px -162px;
   }
 }
