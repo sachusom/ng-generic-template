@@ -1,8 +1,46 @@
 import { Component } from '@angular/core';
+import { AppConfig } from '@core/configs/app.config';
+import { AuthService } from '@core/services/auth.service';
+import { DEFAULT_INTERRUPTSOURCES, Idle } from '@ng-idle/core';
+import { ComponentBase } from '@shared/abstracts/component-base';
 
 @Component({
   selector: 'app-secure',
   templateUrl: './secure.component.html',
   styleUrls: ['./secure.component.scss']
 })
-export class SecureComponent { }
+export class SecureComponent extends ComponentBase {
+
+  constructor(
+    private idle: Idle,
+    private authService: AuthService
+  ) {
+    super();
+    this.watchIdleActivity();
+  }
+
+  /* Public Methods */
+  pageInitVariables(): void { }
+
+  pageSubscribeEvents(): void { }
+
+  pageLoadData(): void {
+    this.reset();
+  }
+
+  pageUnLoad(): void { }
+
+  /* Private Methods */
+  private watchIdleActivity(): void {
+    this.idle.setIdle(1); // how long can they be inactive before considered idle, in seconds
+    this.idle.setTimeout(60 * AppConfig.auth.idleTimeoutInMinutes); // how long can they be idle before considered timed out, in seconds
+    this.idle.setInterrupts(DEFAULT_INTERRUPTSOURCES); // provide sources that will "interrupt" aka provide events indicating the user is active
+    this.idle.onTimeout.subscribe(() => {
+      this.authService.logout();
+    });
+  }
+
+  private reset(): void {
+    this.idle.watch();
+  }
+}

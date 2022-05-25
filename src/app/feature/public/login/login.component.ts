@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ComponentBase } from '@shared/abstracts/component-base';
 import { FormBase } from '@shared/contracts';
+import { LoginService } from './login.service';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +13,11 @@ export class LoginComponent extends ComponentBase implements FormBase {
 
   loginForm!: FormGroup;
 
-  constructor() { super(); }
+  constructor(
+    private loginService: LoginService
+  ) {
+    super();
+  }
 
   /* Public Methods */
   pageInitVariables(): void { }
@@ -36,5 +41,9 @@ export class LoginComponent extends ComponentBase implements FormBase {
 
   resetForm(): void {
     this.loginForm.reset();
+  }
+
+  login(): void {
+    this.loginService.login();
   }
 }
