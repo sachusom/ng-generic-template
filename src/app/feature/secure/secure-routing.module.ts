@@ -20,11 +20,16 @@ const routes: Routes = [
                 loadChildren: () => import('./dev-guide/dev-guide.module').then(m => m.DevGuideModule)
             },
             {
+                path: 'users',
+                loadChildren: () => import('./users/users.module').then(m => m.UsersModule)
+            },
+            {
                 path: '**',
                 redirectTo: 'solid', pathMatch: 'full'
             }
         ]
     },
+
 
 ];
 

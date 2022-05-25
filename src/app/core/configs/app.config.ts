@@ -3,7 +3,7 @@ export const AppConfig =
     auth:
     {
         token: ':nggt-auth',
-        idleTimeoutInMinutes: 1
+        idleTimeoutInMinutes: 30
     },
     currencyFormat: 'INR',
     dateFormat: 'dd-MMM-yyyy',

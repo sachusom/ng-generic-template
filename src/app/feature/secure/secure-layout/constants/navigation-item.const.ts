@@ -12,5 +12,9 @@ export const NavigationItems: NavigationItem[] = [
     {
         text: 'Dev Guide',
         url: 'dev-guide'
+    },
+    {
+        text: 'Users',
+        url: 'users'
     }
 ];
