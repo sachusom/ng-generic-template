@@ -19,11 +19,11 @@ export class ProfileComponent extends ComponentBase implements OnInit {
   }
 
   /* Public Methods */
-  pageInitVariables(): void { }
+  initVariables(): void { }
 
-  pageSubscribeEvents(): void { }
+  subscribeEvents(): void { }
 
-  pageLoadData(): void { }
+  load(): void { }
 
-  pageUnLoad(): void { }
+  unload(): void { }
 }

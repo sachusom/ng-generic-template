@@ -20,15 +20,15 @@ export class LoginComponent extends ComponentBase implements FormBase {
   }
 
   /* Public Methods */
-  pageInitVariables(): void { }
+  initVariables(): void { }
 
-  pageSubscribeEvents(): void { }
+  subscribeEvents(): void { }
 
-  pageLoadData(): void {
+  load(): void {
     this.buildForm();
   }
 
-  pageUnLoad(): void { }
+  unload(): void { }
 
   buildForm(): void {
     this.loginForm = new FormGroup({
@@ -44,6 +44,8 @@ export class LoginComponent extends ComponentBase implements FormBase {
   }
 
   login(): void {
-    this.loginService.login();
+    if (this.loginForm.valid) {
+      this.loginService.login();
+    }
   }
 }

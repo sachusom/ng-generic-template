@@ -20,15 +20,15 @@ export class SecureComponent extends ComponentBase {
   }
 
   /* Public Methods */
-  pageInitVariables(): void { }
+  initVariables(): void { }
 
-  pageSubscribeEvents(): void { }
+  subscribeEvents(): void { }
 
-  pageLoadData(): void {
+  load(): void {
     this.reset();
   }
 
-  pageUnLoad(): void { }
+  unload(): void { }
 
   /* Private Methods */
   private watchIdleActivity(): void {
