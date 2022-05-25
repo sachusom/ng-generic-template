@@ -40,6 +40,9 @@
             ],
             "style": "kebab-case"
           }
+        ],
+        "@typescript-eslint/semi": [
+          "error"
         ]
       }
     },

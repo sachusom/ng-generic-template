@@ -1,8 +1,7 @@
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Component } from '@angular/core';
+import { ComponentBase } from '@shared/abstracts/component-base';
 import { map } from 'rxjs/operators';
-import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
-import { ComponentBase } from '@shared/components/base/component-base';
-import { UiLoaderService } from '@core/components/ui-loader/ui-loader.service';
 
 @Component({
   selector: 'app-dashboard',

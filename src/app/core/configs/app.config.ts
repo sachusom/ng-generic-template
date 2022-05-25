@@ -8,4 +8,4 @@ export const AppConfig =
         age: 3000
     },
     dateFormat: 'MM/dd/yyyy'
-}
+};

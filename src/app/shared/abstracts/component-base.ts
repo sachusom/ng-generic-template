@@ -35,15 +35,15 @@ export abstract class ComponentBase implements OnInit, OnDestroy {
 
   /* Public Methods */
   formatDate(date: Date | string | null): any {
-    return this.datePipe.transform(date, AppConfig.dateFormat)
+    return this.datePipe.transform(date, AppConfig.dateFormat);
   }
 
   /* Private Methods */
   private destroyBase(): void {
-    this.unsubscribeEvents();
+    this.unSubscribeEvents();
   }
 
-  private unsubscribeEvents(): void {
+  private unSubscribeEvents(): void {
     this.destroy$.next(true);
     this.destroy$.unsubscribe();
   }
