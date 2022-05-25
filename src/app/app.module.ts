@@ -1,4 +1,5 @@
 import { DatePipe } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 import { Injector, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -12,9 +13,7 @@ import { setAppInjector } from './core/services/app-injector.service';
     AppComponent
   ],
   imports: [
-    BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule,
     CoreModule
   ],
   providers: [DatePipe],

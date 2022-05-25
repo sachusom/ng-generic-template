@@ -1,5 +1,8 @@
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule, Optional, SkipSelf } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppLoaderComponent } from './components/app-loader/app-loader.component';
 
 @NgModule({
@@ -7,7 +10,10 @@ import { AppLoaderComponent } from './components/app-loader/app-loader.component
     AppLoaderComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    BrowserModule,
+    BrowserAnimationsModule,
+    HttpClientModule
   ],
   exports: [AppLoaderComponent]
 })
