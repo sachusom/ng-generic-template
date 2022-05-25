@@ -5,6 +5,7 @@ import { ComponentsModule } from './components/components.module';
 import { DirectivesModule } from './directives/directives.module';
 import { ModulesModule } from './modules/modules.module';
 import { PipesModule } from './pipes/pipes.module';
+import { ModalService } from './services/modal.service';
 
 const exportable = [
   ComponentsModule,
@@ -16,6 +17,6 @@ const exportable = [
 @NgModule({
   imports: exportable,
   exports: exportable,
-  providers: [DatePipe]
+  providers: [DatePipe, ModalService]
 })
 export class SharedModule { }

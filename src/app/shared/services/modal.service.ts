@@ -3,6 +3,7 @@ import { FormGroup } from '@angular/forms';
 import { MatBottomSheet, MatBottomSheetRef } from '@angular/material/bottom-sheet';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Observable } from 'rxjs';
 import { ConfirmModalComponent } from '../components/confirm-modal/confirm-modal.component';
 import { MessageModalComponent } from '../components/message-modal/message-modal.component';
 import { ValidationSheetComponent } from '../components/validation-sheet/validation-sheet.component';
@@ -52,7 +53,7 @@ export class ModalService {
     this.dialog.open(MessageModalComponent, dialogConfig);
   }
 
-  confirm(data: ConfirmModalData): any {
+  confirm(data: ConfirmModalData): Observable<boolean> {
     const dialogConfig = this.setDialogConfig(true, false, 'auto', data);
     dialogConfig.panelClass = 'confirm';
     return this.dialog.open(ConfirmModalComponent, dialogConfig).afterClosed();

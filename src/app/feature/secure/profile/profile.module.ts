@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { SharedModule } from '@shared/shared.module';
+import { SecureSharedModule } from '../secure-shared/secure-shared.module';
 import { ProfileComponent } from './containers/profile/profile.component';
 import { ProfileRoutingModule } from './profile-routing.module';
 
@@ -9,7 +10,8 @@ import { ProfileRoutingModule } from './profile-routing.module';
   ],
   imports: [
     SharedModule,
-    ProfileRoutingModule
+    ProfileRoutingModule,
+    SecureSharedModule
   ]
 })
 export class ProfileModule { }

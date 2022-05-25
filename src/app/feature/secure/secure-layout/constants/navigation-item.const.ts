@@ -8,5 +8,9 @@ export const NavigationItems: NavigationItem[] = [
     {
         text: 'Profile',
         url: 'profile'
+    },
+    {
+        text: 'Dev Guide',
+        url: 'dev-guide'
     }
 ];

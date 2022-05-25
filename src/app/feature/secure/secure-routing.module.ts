@@ -16,6 +16,10 @@ const routes: Routes = [
                 loadChildren: () => import('./profile/profile.module').then(m => m.ProfileModule)
             },
             {
+                path: 'dev-guide',
+                loadChildren: () => import('./dev-guide/dev-guide.module').then(m => m.DevGuideModule)
+            },
+            {
                 path: '**',
                 redirectTo: 'solid', pathMatch: 'full'
             }
