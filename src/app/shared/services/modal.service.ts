@@ -29,28 +29,28 @@ export class ModalService {
     return dialogConfig;
   }
 
-  showSuccessMessage(message: string): void {
+  showSuccessMessage(message: string): Observable<boolean> {
     const dialogConfig = this.setDialogConfig(true, false, 'auto', message);
     dialogConfig.panelClass = 'success';
-    this.dialog.open(MessageModalComponent, dialogConfig);
+    return this.dialog.open(MessageModalComponent, dialogConfig).afterClosed();
   }
 
-  showInfoMessage(message: string): void {
+  showInfoMessage(message: string): Observable<boolean> {
     const dialogConfig = this.setDialogConfig(true, false, 'auto', message);
     dialogConfig.panelClass = 'info';
-    this.dialog.open(MessageModalComponent, dialogConfig);
+    return this.dialog.open(MessageModalComponent, dialogConfig).afterClosed();
   }
 
-  showAlertMessage(message: string): any {
+  showAlertMessage(message: string): Observable<boolean> {
     const dialogConfig = this.setDialogConfig(true, false, 'auto', message);
     dialogConfig.panelClass = 'alert';
-    return this.dialog.open(MessageModalComponent, dialogConfig);
+    return this.dialog.open(MessageModalComponent, dialogConfig).afterClosed();
   }
 
-  showErrorMessage(message: string): void {
+  showErrorMessage(message: string): Observable<boolean> {
     const dialogConfig = this.setDialogConfig(true, false, 'auto', message);
     dialogConfig.panelClass = 'error';
-    this.dialog.open(MessageModalComponent, dialogConfig);
+    return this.dialog.open(MessageModalComponent, dialogConfig).afterClosed();
   }
 
   confirm(data: ConfirmModalData): Observable<boolean> {

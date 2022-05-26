@@ -20,6 +20,6 @@ export class MessageModalComponent {
 
   /* Public Methods */
   onOk(): void {
-    this.dialogRef.close();
+    this.dialogRef.close(true);
   }
 }
