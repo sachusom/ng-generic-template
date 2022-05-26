@@ -3,7 +3,7 @@ import { ComponentBase } from '@shared/abstracts/component-base';
 import { ModalService } from '@shared/services/modal.service';
 
 @Component({
-  selector: 'app-dev-guide-modals',
+  selector: 'nggt-dev-guide-modals',
   templateUrl: './dev-guide-modals.component.html',
   styleUrls: ['./dev-guide-modals.component.scss']
 })

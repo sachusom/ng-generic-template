@@ -6,13 +6,15 @@ import { DevGuideComponent } from './dev-guide.component';
 import { DevGuideModalsComponent } from './components/dev-guide-modals/dev-guide-modals.component';
 import { DevGuideFormComponent } from './components/dev-guide-form/dev-guide-form.component';
 import { DevGuideSkeletonsComponent } from './components/dev-guide-skeletons/dev-guide-skeletons.component';
+import { DevGuideBreadcrumbComponent } from './components/dev-guide-breadcrumb/dev-guide-breadcrumb.component';
 
 @NgModule({
   declarations: [
     DevGuideComponent,
     DevGuideModalsComponent,
     DevGuideFormComponent,
-    DevGuideSkeletonsComponent
+    DevGuideSkeletonsComponent,
+    DevGuideBreadcrumbComponent
   ],
   imports: [
     SharedModule,

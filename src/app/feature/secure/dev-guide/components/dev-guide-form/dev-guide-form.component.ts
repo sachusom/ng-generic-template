@@ -5,7 +5,7 @@ import { FormBase } from '@shared/contracts';
 import { ModalService } from '@shared/services/modal.service';
 
 @Component({
-  selector: 'app-dev-guide-form',
+  selector: 'nggt-dev-guide-form',
   templateUrl: './dev-guide-form.component.html',
   styleUrls: ['./dev-guide-form.component.scss']
 })
