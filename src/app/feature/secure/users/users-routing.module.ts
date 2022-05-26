@@ -19,7 +19,7 @@ const routes: Routes = [
         component: UserListComponent,
       },
       {
-        path: 'id',
+        path: ':id',
         component: UserDetailsComponent,
         data: { breadcrumb: 'Details' },
         children: [

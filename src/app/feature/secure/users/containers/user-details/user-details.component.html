@@ -1,8 +1,8 @@
 <ng-container *ngIf="outlet.isActivated === false">
     <p>user-details worksss!</p>
-    <a [routerLink]="['/users/id/card']" [skipLocationChange]="true">ID Card</a>
+    <a [routerLink]="['/users/1/card']" [skipLocationChange]="true">ID Card</a>
     <br />
-    <a [routerLink]="['/users/id/social']" [skipLocationChange]="true">Social</a>
+    <a [routerLink]="['/users/1/social']" [skipLocationChange]="true">Social</a>
 </ng-container>
 
 <router-outlet #outlet="outlet"></router-outlet>

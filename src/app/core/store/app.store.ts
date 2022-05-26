@@ -4,7 +4,7 @@ import { DataStoreBase } from '../abstracts/data-store.base';
 @Injectable({
   providedIn: 'root'
 })
-export class AppDataStoreService extends DataStoreBase {
+export class AppStore extends DataStoreBase {
 
   constructor() {
     super();

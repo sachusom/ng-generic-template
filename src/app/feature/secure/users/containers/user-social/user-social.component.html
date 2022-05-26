@@ -1,8 +1,8 @@
 <ng-container *ngIf="outlet.isActivated === false">
     <p>user-social works!</p>
-    <a [routerLink]="['/users/id/social/twitter']" [skipLocationChange]="true">Twitter</a>
+    <a [routerLink]="['/users/1/social/twitter']" [skipLocationChange]="true">Twitter</a>
     <br />
-    <a [routerLink]="['/users/id/social/linkedin']" [skipLocationChange]="true">LinkedIn</a>
+    <a [routerLink]="['/users/1/social/linkedin']" [skipLocationChange]="true">LinkedIn</a>
 </ng-container>
 
 <router-outlet #outlet="outlet"></router-outlet>
