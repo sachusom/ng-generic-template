@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ComponentBase } from '@shared/abstracts/component-base';
 import { FormBase } from '@shared/contracts';
+import { ModalService } from '@shared/services/modal.service';
 import { LoginService } from './login.service';
 
 @Component({
@@ -14,7 +15,8 @@ export class LoginComponent extends ComponentBase implements FormBase {
   loginForm!: FormGroup;
 
   constructor(
-    private loginService: LoginService
+    private loginService: LoginService,
+    private modalService: ModalService
   ) {
     super();
   }

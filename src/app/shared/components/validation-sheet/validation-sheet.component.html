@@ -1,11 +1,11 @@
-<div class="position-relative">
-    <i class="fa fa-times close-icon" (click)="close()" aria-hidden="true"></i>
-    <div class="custom-scroll validation-sheet-container">
-        <!-- <perfect-scrollbar> -->
+<perfect-scrollbar>
+    <div class="validation-sheet-container">
         <ul>
-            <li *ngFor="let error of errors"><i class="fal fa-exclamation-triangle" aria-hidden="true"></i> {{error}}
+            <li *ngFor="let error of errors" (click)="onItemClick(error)">
+                <span class="validation-items">
+                    <mat-icon>error</mat-icon>{{error.text}}
+                </span>
             </li>
         </ul>
-        <!-- </perfect-scrollbar> -->
     </div>
-</div>
+</perfect-scrollbar>

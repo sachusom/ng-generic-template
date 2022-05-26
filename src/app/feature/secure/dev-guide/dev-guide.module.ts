@@ -4,11 +4,13 @@ import { SecureSharedModule } from '../secure-shared/secure-shared.module';
 import { DevGuideRoutingModule } from './dev-guide-routing.module';
 import { DevGuideComponent } from './dev-guide.component';
 import { DevGuideModalsComponent } from './components/dev-guide-modals/dev-guide-modals.component';
+import { DevGuideFormComponent } from './components/dev-guide-form/dev-guide-form.component';
 
 @NgModule({
   declarations: [
     DevGuideComponent,
-    DevGuideModalsComponent
+    DevGuideModalsComponent,
+    DevGuideFormComponent
   ],
   imports: [
     SharedModule,

@@ -53,8 +53,4 @@ export class DevGuideModalsComponent extends ComponentBase {
   showNotification(): void {
     this.modalService.showNotification('Notification');
   }
-
-  showValidationSheet(): void {
-    // this.modalService.showSuccessMessage('Success');
-  }
 }
