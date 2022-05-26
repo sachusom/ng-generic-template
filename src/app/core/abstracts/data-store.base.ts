@@ -27,6 +27,8 @@ export abstract class DataStoreBase {
     this.cache.delete(key);
   }
 
+  protected abstract initListeners(): void;
+
   protected manageStoreValue(
     key
       : string,
@@ -48,6 +50,4 @@ export abstract class DataStoreBase {
       listener$: () => this.listeners[key]
     };
   }
-
-  protected abstract initListeners(): void;
 }

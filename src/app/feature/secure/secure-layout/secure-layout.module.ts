@@ -1,17 +1,18 @@
-import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from '@shared/shared.module';
-import { SecureLayoutComponent } from './secure-layout.component';
+import { AppLayoutComponent } from './app-layout/app-layout.component';
 
 @NgModule({
   declarations: [
-    SecureLayoutComponent
+    AppLayoutComponent,
   ],
   imports: [
     SharedModule,
     RouterModule
   ],
-  exports: [SecureLayoutComponent]
+  exports: [
+    AppLayoutComponent,
+  ]
 })
 export class SecureLayoutModule { }
