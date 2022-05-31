@@ -15,7 +15,6 @@ const exportable: any[] = [
 ];
 
 @NgModule({
-  imports: [exportable],
   exports: [exportable]
 })
 export class ModulesModule { }

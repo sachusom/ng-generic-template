@@ -1,9 +1,10 @@
+
 import { BehaviorSubject, Observable, ReplaySubject, Subject } from 'rxjs';
 
-export interface DataStoreItem {
+export interface DataStoreItem<T> {
   init(): void;
-  set(data: any): void;
-  get(): any;
+  set(data: T): void;
+  get(): T | any;
   clear(): void;
   listener$(): Observable<any>;
 }
@@ -29,14 +30,14 @@ export abstract class DataStoreBase {
 
   protected abstract initListeners(): void;
 
-  protected manageStoreValue(
+  protected manageStoreValue<T>(
     key
       : string,
     listenerType
       : Subject<any>
       | BehaviorSubject<any>
       | ReplaySubject<any> = new Subject<any>()
-  ): DataStoreItem {
+  ): DataStoreItem<T> {
     return {
       init: () => this.listeners[key] = listenerType,
       set: (data: any) => {
@@ -46,7 +47,12 @@ export abstract class DataStoreBase {
           : null;
       },
       get: () => this.get(key),
-      clear: () => this.clear(key),
+      clear: () => {
+        this.clear(key);
+        this.listeners[key as any]
+          ? this.listeners[key].next(undefined)
+          : null;
+      },
       listener$: () => this.listeners[key]
     };
   }
