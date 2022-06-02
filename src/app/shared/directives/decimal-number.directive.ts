@@ -1,6 +1,6 @@
 /**
  * To only allow decimal numbers in input field.
- * @author VishnuSomanath
+ * @author Vishnu Somanath
  * @version 1.0.0
  * @return {void}
  * @example

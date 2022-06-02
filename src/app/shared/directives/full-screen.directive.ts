@@ -1,6 +1,6 @@
 /**
  * Fullscreen
- * @author VishnuSomanath
+  * @author Vishnu Somanath
  * @version 1.0.0
  * @return {void}
  * @example
