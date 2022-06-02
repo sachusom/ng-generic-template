@@ -1,6 +1,6 @@
 /**
  * To make the element style display=none.
- * @author VishnuSomanath
+  * @author Vishnu Somanath
  * @version 1.0.0
  * @param {boolean} nggtDisplayNone - boolean
  * @return {void}

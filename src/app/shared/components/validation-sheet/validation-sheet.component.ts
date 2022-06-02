@@ -1,17 +1,18 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { FormArray, FormControl, FormGroup } from '@angular/forms';
 import { MatBottomSheetRef, MAT_BOTTOM_SHEET_DATA } from '@angular/material/bottom-sheet';
+import { ValidationError } from './validation-error.model';
 
 @Component({
-  selector: 'sxp-validation-sheet',
+  selector: 'nggt-validation-sheet',
   templateUrl: './validation-sheet.component.html',
   styleUrls: ['./validation-sheet.component.scss']
 })
-export class ValidationSheetComponent implements OnInit {
+export class ValidationSheetComponent {
 
   form: FormGroup;
   messages: any;
-  errors = [];
+  errors: ValidationError[] = [];
 
   constructor(
     private sheetRef: MatBottomSheetRef<ValidationSheetComponent>,
@@ -21,28 +22,32 @@ export class ValidationSheetComponent implements OnInit {
     this.composer();
   }
 
-  ngOnInit(): void {
-  }
-
   /* Public Methods */
-  close(): void {
-    this.sheetRef.dismiss();
+  onItemClick(error: any): void {
+    this.sheetRef.dismiss(error);
   }
 
   /* private Methods */
   private composer(): void {
-    Object.keys(this.form.controls).forEach(field => {
-      const control = this.form.controls[field] as FormControl | FormGroup | FormArray;
+    this.iterator(this.form, null);
+  }
+
+  private iterator(form: any, parent: any): void {
+    Object.keys(form.controls).forEach(field => {
+      const control = form.controls[field] as FormControl | FormGroup | FormArray;
       if (control instanceof FormControl) {
         if (control.status === 'INVALID') {
           for (const key in control.errors) {
             if (control.errors.hasOwnProperty(key)) {
-              // this.errors.push(this.messages[field][key]);
+              const error = {} as ValidationError;
+              error.field = parent ? `${parent}.${field}` : field;
+              error.text = parent ? this.messages[parent][field][key] : this.messages[field][key];
+              this.errors.push(error);
             }
           }
         }
       } else if (control instanceof FormGroup || control instanceof FormArray) {
-
+        this.iterator(control, field);
       } else {
 
       }

@@ -8,7 +8,10 @@ const routes: Routes = [
   },
   {
     path: '',
-    loadChildren: () => import('./feature/secure/secure.module').then(m => m.SecureModule)
+    loadChildren: () => import('./feature/secure/secure.module').then(m => m.SecureModule),
+    data: {
+      breadcrumb: 'Home'
+    }
   },
   {
     path: '**',

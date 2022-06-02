@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { CopyToClipboardComponent } from './copy-to-clipboard.component';
 
 describe('CopyToClipboardComponent', () => {
@@ -8,9 +7,9 @@ describe('CopyToClipboardComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CopyToClipboardComponent ]
+      declarations: [CopyToClipboardComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

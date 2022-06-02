@@ -1,5 +1,4 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { ValidationSheetComponent } from './validation-sheet.component';
 
 describe('ValidationSheetComponent', () => {
@@ -8,9 +7,9 @@ describe('ValidationSheetComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ValidationSheetComponent ]
+      declarations: [ValidationSheetComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

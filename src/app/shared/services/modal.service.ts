@@ -3,6 +3,7 @@ import { FormGroup } from '@angular/forms';
 import { MatBottomSheet, MatBottomSheetRef } from '@angular/material/bottom-sheet';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Observable } from 'rxjs';
 import { ConfirmModalComponent } from '../components/confirm-modal/confirm-modal.component';
 import { MessageModalComponent } from '../components/message-modal/message-modal.component';
 import { ValidationSheetComponent } from '../components/validation-sheet/validation-sheet.component';
@@ -28,31 +29,31 @@ export class ModalService {
     return dialogConfig;
   }
 
-  showSuccessMessage(message: string): void {
+  showSuccessMessage(message: string): Observable<boolean> {
     const dialogConfig = this.setDialogConfig(true, false, 'auto', message);
     dialogConfig.panelClass = 'success';
-    this.dialog.open(MessageModalComponent, dialogConfig);
+    return this.dialog.open(MessageModalComponent, dialogConfig).afterClosed();
   }
 
-  showInfoMessage(message: string): void {
+  showInfoMessage(message: string): Observable<boolean> {
     const dialogConfig = this.setDialogConfig(true, false, 'auto', message);
     dialogConfig.panelClass = 'info';
-    this.dialog.open(MessageModalComponent, dialogConfig);
+    return this.dialog.open(MessageModalComponent, dialogConfig).afterClosed();
   }
 
-  showAlertMessage(message: string): any {
+  showAlertMessage(message: string): Observable<boolean> {
     const dialogConfig = this.setDialogConfig(true, false, 'auto', message);
     dialogConfig.panelClass = 'alert';
-    return this.dialog.open(MessageModalComponent, dialogConfig);
+    return this.dialog.open(MessageModalComponent, dialogConfig).afterClosed();
   }
 
-  showErrorMessage(message: string): void {
+  showErrorMessage(message: string): Observable<boolean> {
     const dialogConfig = this.setDialogConfig(true, false, 'auto', message);
     dialogConfig.panelClass = 'error';
-    this.dialog.open(MessageModalComponent, dialogConfig);
+    return this.dialog.open(MessageModalComponent, dialogConfig).afterClosed();
   }
 
-  confirm(data: ConfirmModalData): any {
+  confirm(data: ConfirmModalData): Observable<boolean> {
     const dialogConfig = this.setDialogConfig(true, false, 'auto', data);
     dialogConfig.panelClass = 'confirm';
     return this.dialog.open(ConfirmModalComponent, dialogConfig).afterClosed();

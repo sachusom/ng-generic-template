@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { SecureComponent } from './secure.component';
 
 describe('SecureComponent', () => {
@@ -8,9 +7,9 @@ describe('SecureComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SecureComponent ]
+      declarations: [SecureComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

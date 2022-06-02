@@ -1,27 +1,17 @@
-import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { SharedModule } from '@shared/shared.module';
+import { SecureSharedModule } from '../secure-shared/secure-shared.module';
+import { DashboardComponent } from './containers/dashboard/dashboard.component';
 import { DashboardRoutingModule } from './dashboard-routing.module';
-import { DashboardComponent } from './dashboard.component';
-import { MatGridListModule } from '@angular/material/grid-list';
-import { MatCardModule } from '@angular/material/card';
-import { MatMenuModule } from '@angular/material/menu';
-import { MatIconModule } from '@angular/material/icon';
-import { MatButtonModule } from '@angular/material/button';
-import { LayoutModule } from '@angular/cdk/layout';
 
 @NgModule({
   declarations: [
     DashboardComponent
   ],
   imports: [
-    CommonModule,
+    SharedModule,
     DashboardRoutingModule,
-    MatGridListModule,
-    MatCardModule,
-    MatMenuModule,
-    MatIconModule,
-    MatButtonModule,
-    LayoutModule
-  ]
+    SecureSharedModule
+  ],
 })
 export class DashboardModule { }

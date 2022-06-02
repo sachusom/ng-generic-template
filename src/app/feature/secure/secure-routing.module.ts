@@ -16,11 +16,20 @@ const routes: Routes = [
                 loadChildren: () => import('./profile/profile.module').then(m => m.ProfileModule)
             },
             {
+                path: 'dev-guide',
+                loadChildren: () => import('./dev-guide/dev-guide.module').then(m => m.DevGuideModule)
+            },
+            {
+                path: 'users',
+                loadChildren: () => import('./users/users.module').then(m => m.UsersModule)
+            },
+            {
                 path: '**',
-                redirectTo: 'solid', pathMatch: 'full'
+                redirectTo: 'dashboard', pathMatch: 'full'
             }
         ]
     },
+
 
 ];
 

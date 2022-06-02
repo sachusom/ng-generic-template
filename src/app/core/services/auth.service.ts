@@ -6,7 +6,7 @@
  */
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { AppConfig } from '../configs';
 import { CommunicationService } from './communication.service';
@@ -21,14 +21,18 @@ export class AuthService {
     private router: Router
   ) { }
 
-  authenticateUser(): Observable<any> {
+  authenticate(): Observable<any> {
     return this.communicationService.get<any>('')
       .pipe(
         tap((response) => {
           if (response.data) {
-            localStorage.setItem(AppConfig.localStorage.authtokenKey, response.data.token);
+            localStorage.setItem(AppConfig.auth.token, response.data.token);
           }
         }));
+  }
+
+  authenticateFake(): Observable<any> {
+    return of({});
   }
 
   isLoggedIn(): boolean {
@@ -36,7 +40,7 @@ export class AuthService {
   }
 
   logout(): void {
-    localStorage.removeItem(AppConfig.localStorage.authtokenKey);
+    localStorage.removeItem(AppConfig.auth.token);
     this.router.navigate(['/auth/login']);
   }
 }

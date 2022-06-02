@@ -3,7 +3,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
-  selector: 'sxp-message-modal',
+  selector: 'nggt-message-modal',
   templateUrl: './message-modal.component.html',
   styleUrls: ['./message-modal.component.scss']
 })
@@ -20,6 +20,6 @@ export class MessageModalComponent {
 
   /* Public Methods */
   onOk(): void {
-    this.dialogRef.close();
+    this.dialogRef.close(true);
   }
 }
