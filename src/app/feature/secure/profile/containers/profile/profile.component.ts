@@ -13,11 +13,6 @@ export class ProfileComponent extends ComponentBase implements OnInit {
     super();
   }
 
-  /* LifeCycle Hooks */
-  ngOnInit(): void {
-    console.log();
-  }
-
   /* Public Methods */
   initVariables(): void { }
 

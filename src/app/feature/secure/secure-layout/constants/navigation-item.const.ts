@@ -6,14 +6,6 @@ export const NavigationItems: NavigationItem[] = [
         url: 'dashboard'
     },
     {
-        text: 'Profile',
-        url: 'profile'
-    },
-    {
-        text: 'Users',
-        url: 'users'
-    },
-    {
         text: 'Dev Guide',
         url: 'dev-guide'
     }

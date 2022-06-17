@@ -1,6 +1,7 @@
 
 import { DatePipe } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { NgxMatModalModule } from '@vslabs/ngx-mat-modal';
 import { PerfectScrollbarConfigInterface, PerfectScrollbarModule, PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
 import { ComponentsModule } from './components/components.module';
 import { DirectivesModule } from './directives/directives.module';
@@ -17,7 +18,8 @@ const exportable = [
   DirectivesModule,
   ModulesModule,
   PipesModule,
-  PerfectScrollbarModule
+  PerfectScrollbarModule,
+  NgxMatModalModule
 ];
 
 @NgModule({

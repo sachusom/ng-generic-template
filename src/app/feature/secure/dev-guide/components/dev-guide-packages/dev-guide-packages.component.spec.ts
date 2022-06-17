@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UserIdCardComponent } from './user-id-card.component';
+import { DevGuidePackagesComponent } from './dev-guide-packages.component';
 
-describe('UserIdCardComponent', () => {
-  let component: UserIdCardComponent;
-  let fixture: ComponentFixture<UserIdCardComponent>;
+describe('DevGuidePackagesComponent', () => {
+  let component: DevGuidePackagesComponent;
+  let fixture: ComponentFixture<DevGuidePackagesComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ UserIdCardComponent ]
+      declarations: [ DevGuidePackagesComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(UserIdCardComponent);
+    fixture = TestBed.createComponent(DevGuidePackagesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

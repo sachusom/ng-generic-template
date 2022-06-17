@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { MatBottomSheet, MatBottomSheetRef } from '@angular/material/bottom-sheet';
-import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { MatDialogConfig } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { NgxMatModalService } from '@vslabs/ngx-mat-modal';
+import { MessageModalData } from '@vslabs/ngx-mat-modal/lib/models/message-modal-data.model';
 import { Observable } from 'rxjs';
-import { ConfirmModalComponent } from '../components/confirm-modal/confirm-modal.component';
-import { MessageModalComponent } from '../components/message-modal/message-modal.component';
 import { ValidationSheetComponent } from '../components/validation-sheet/validation-sheet.component';
 import { ConfirmModalData } from '../models/confirm-modal-data.model';
 
@@ -13,9 +13,9 @@ import { ConfirmModalData } from '../models/confirm-modal-data.model';
 export class ModalService {
 
   constructor(
-    private dialog: MatDialog,
     private snackBar: MatSnackBar,
-    private bottomSheet: MatBottomSheet
+    private bottomSheet: MatBottomSheet,
+    private ngxMatModalService: NgxMatModalService
   ) { }
 
   /* Public Methods */
@@ -29,34 +29,21 @@ export class ModalService {
     return dialogConfig;
   }
 
-  showSuccessMessage(message: string): Observable<boolean> {
+  showMessage(message: string, title: string = ''): Observable<boolean> {
     const dialogConfig = this.setDialogConfig(true, false, 'auto', message);
-    dialogConfig.panelClass = 'success';
-    return this.dialog.open(MessageModalComponent, dialogConfig).afterClosed();
-  }
-
-  showInfoMessage(message: string): Observable<boolean> {
-    const dialogConfig = this.setDialogConfig(true, false, 'auto', message);
-    dialogConfig.panelClass = 'info';
-    return this.dialog.open(MessageModalComponent, dialogConfig).afterClosed();
-  }
-
-  showAlertMessage(message: string): Observable<boolean> {
-    const dialogConfig = this.setDialogConfig(true, false, 'auto', message);
-    dialogConfig.panelClass = 'alert';
-    return this.dialog.open(MessageModalComponent, dialogConfig).afterClosed();
-  }
-
-  showErrorMessage(message: string): Observable<boolean> {
-    const dialogConfig = this.setDialogConfig(true, false, 'auto', message);
-    dialogConfig.panelClass = 'error';
-    return this.dialog.open(MessageModalComponent, dialogConfig).afterClosed();
+    const data: MessageModalData = {
+      title,
+      message
+    };
+    return this.ngxMatModalService.showMessage(data, dialogConfig);
   }
 
   confirm(data: ConfirmModalData): Observable<boolean> {
-    const dialogConfig = this.setDialogConfig(true, false, 'auto', data);
-    dialogConfig.panelClass = 'confirm';
-    return this.dialog.open(ConfirmModalComponent, dialogConfig).afterClosed();
+    return this.ngxMatModalService.confirm({
+      question: 'Are you sure?',
+      confirmBtnText: 'Yes',
+      cancelBtnText: 'No'
+    });
   }
 
   /*

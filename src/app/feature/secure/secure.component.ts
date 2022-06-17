@@ -38,7 +38,7 @@ export class SecureComponent extends ComponentBase {
     this.idle.setTimeout(60 * AppConfig.auth.idleTimeoutInMinutes); // how long can they be idle before considered timed out, in seconds
     this.idle.setInterrupts(DEFAULT_INTERRUPTSOURCES); // provide sources that will "interrupt" aka provide events indicating the user is active
     this.idle.onTimeout.subscribe(() => {
-      this.modalService.showAlertMessage('Time Out')
+      this.modalService.showMessage('Time Out')
         .subscribe(() => {
           this.authService.logout();
         });

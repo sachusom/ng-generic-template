@@ -32,7 +32,7 @@ export class AuthInterceptor implements HttpInterceptor {
     /* Private Methods */
     private setHeader(req: HttpRequest<any>): HttpRequest<any> {
         let modifiedReq: HttpRequest<any> = req;
-        const token = localStorage.getItem(AppConfig.localStorage.authtokenKey);
+        const token = localStorage.getItem(AppConfig.auth.token);
 
         if (!token) {
             this.authService.logout();

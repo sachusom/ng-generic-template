@@ -1,6 +1,6 @@
 /**
  * This is a wrapper for the HttpClient with caching and loading functionalitities
- * @author VishnuSomanath
+ * @author Vishnu Somanath
  * @version 1.0.0
  */
 import { HttpBackend, HttpClient, HttpHeaders } from '@angular/common/http';

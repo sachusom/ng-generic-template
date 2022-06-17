@@ -23,20 +23,8 @@ export class DevGuideModalsComponent extends ComponentBase {
 
   unload(): void { }
 
-  successMessage(): void {
-    this.modalService.showSuccessMessage('Success');
-  }
-
-  showInfoMessage(): void {
-    this.modalService.showInfoMessage('Information');
-  }
-
-  showAlertMessage(): void {
-    this.modalService.showAlertMessage('Alert');
-  }
-
-  showErrorMessage(): void {
-    this.modalService.showErrorMessage('Error');
+  showMessage(): void {
+    this.modalService.showMessage('Success', '');
   }
 
   confirm(): void {
