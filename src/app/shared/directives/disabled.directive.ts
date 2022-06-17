@@ -1,6 +1,6 @@
 /**
  * To drag drop file inputs.
-  * @author Vishnu Somanath
+ * @author Vishnu Somanath
  * @version 1.0.0
  * @return {void}
  * @example
