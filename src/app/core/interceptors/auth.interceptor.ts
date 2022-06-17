@@ -4,7 +4,7 @@ import {
     HTTP_INTERCEPTORS
 } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 
 import { AppConfig } from '../configs';
 import { AuthService } from '../services/auth.service';
@@ -13,9 +13,6 @@ import { AuthService } from '../services/auth.service';
     providedIn: 'root'
 })
 export class AuthInterceptor implements HttpInterceptor {
-
-    private refreshTokenInProgress = false;
-    private refreshTokenSubject: BehaviorSubject<any> = new BehaviorSubject<any>(null);
 
     constructor(
         private authService: AuthService

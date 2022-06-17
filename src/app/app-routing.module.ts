@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthInterceptorProvider } from '@core/interceptors/auth.interceptor';
+import { ErrorInterceptorProvider } from '@core/interceptors/error.interceptor';
 
 const routes: Routes = [
   {
@@ -20,12 +22,11 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes,
-    {
-      // useHash: true,
-      // preloadingStrategy: PreloadAllModules,
-    },
-  )],
-  exports: [RouterModule]
+  imports: [RouterModule.forRoot(routes, {})],
+  exports: [RouterModule],
+  providers: [
+    AuthInterceptorProvider,
+    ErrorInterceptorProvider
+  ]
 })
 export class AppRoutingModule { }

@@ -11,7 +11,8 @@ export class AuthorizationGuard implements CanActivateChild {
     private router: Router
   ) { }
 
-  private checkGuard(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> {
+  private checkGuard(route: ActivatedRouteSnapshot, state: RouterStateSnapshot)
+    : Observable<boolean> {
     if (!this.isAuthorized()) {
       this.router.navigate(['no-access']);
       return of(false);
@@ -24,7 +25,8 @@ export class AuthorizationGuard implements CanActivateChild {
     return true;
   }
 
-  canActivateChild(activatedRouteSnapshot: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> {
+  canActivateChild(activatedRouteSnapshot: ActivatedRouteSnapshot, state: RouterStateSnapshot)
+    : Observable<boolean> {
     return this.checkGuard(activatedRouteSnapshot, state);
   }
 }

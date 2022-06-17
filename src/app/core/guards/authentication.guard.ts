@@ -12,7 +12,8 @@ export class AuthenticationGuard implements CanActivate {
     private authService: AuthService,
   ) { }
 
-  private checkGuard(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> {
+  private checkGuard(route: ActivatedRouteSnapshot, state: RouterStateSnapshot)
+    : Observable<boolean> {
     if (this.authService.isLoggedIn()) {
       return of(true);
     } else {
@@ -21,7 +22,8 @@ export class AuthenticationGuard implements CanActivate {
     }
   }
 
-  canActivate(activatedRouteSnapshot: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> {
+  canActivate(activatedRouteSnapshot: ActivatedRouteSnapshot, state: RouterStateSnapshot)
+    : Observable<boolean> {
     return this.checkGuard(activatedRouteSnapshot, state);
   }
 }
