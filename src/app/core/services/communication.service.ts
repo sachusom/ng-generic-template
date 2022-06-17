@@ -5,8 +5,9 @@
  */
 import { HttpBackend, HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, of, throwError } from 'rxjs';
-import { catchError, tap } from 'rxjs/operators';
+import { catchError, of, throwError } from 'rxjs';
+import { Observable } from 'rxjs/internal/Observable';
+import { tap } from 'rxjs/operators';
 import { AppLoaderService } from './app-loader.service';
 import { RequestCacheService } from './request-cache.service';
 
@@ -15,9 +16,8 @@ import { RequestCacheService } from './request-cache.service';
 })
 export class CommunicationService {
 
-  /* Public Properties */
-  callStackCount = 0;
-
+  /* Private Properties */
+  private callStackCount = 0;
   private httpBackendClient: HttpClient;
 
   constructor(
@@ -43,7 +43,11 @@ export class CommunicationService {
    * @param doCache  
    * @returns 
    */
-  get<T>(apiPath: string, options: any = null, loaderText: string | any = null, hasAuth: boolean = true, doCache: boolean = false): Observable<T> {
+  get<T>(apiPath: string, options: any = null,
+    loaderText: string | any = null,
+    hasAuth: boolean = true,
+    doCache: boolean = false)
+    : Observable<T> {
     const showLoader = loaderText ? true : false;
     const cachedResponse = this.cacheService.get(apiPath);
 
@@ -68,7 +72,12 @@ export class CommunicationService {
     }
   }
 
-  post<T>(apiPath: string, data: any, options: any = null, loaderText: string | any = null, hasAuth: boolean = true): Observable<T> {
+  post<T>(apiPath: string,
+    data: any,
+    options: any = null,
+    loaderText: string | any = null,
+    hasAuth: boolean = true)
+    : Observable<T> {
     const showLoader = loaderText ? true : false;
 
     if (showLoader) { this.showLoader(loaderText); }

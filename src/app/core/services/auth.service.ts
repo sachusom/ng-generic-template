@@ -24,7 +24,7 @@ export class AuthService {
   authenticate(): Observable<any> {
     return this.communicationService.get<any>('')
       .pipe(
-        tap((response) => {
+        tap((response: any) => {
           if (response.data) {
             localStorage.setItem(AppConfig.auth.token, response.data.token);
           }
