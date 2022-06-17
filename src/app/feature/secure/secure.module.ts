@@ -15,7 +15,7 @@ import { SecureComponent } from './secure.component';
     SecureRoutingModule,
     SecureLayoutModule,
     NgIdleModule,
-    NgIdleKeepaliveModule.forRoot()
+    NgIdleKeepaliveModule
   ]
 })
 export class SecureModule { }

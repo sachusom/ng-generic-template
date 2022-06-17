@@ -4,10 +4,10 @@ import { MatBottomSheet, MatBottomSheetRef } from '@angular/material/bottom-shee
 import { MatDialogConfig } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { NgxMatModalService } from '@vslabs/ngx-mat-modal';
+import { ConfirmModalData } from '@vslabs/ngx-mat-modal/lib/models/confirm-modal-data.model';
 import { MessageModalData } from '@vslabs/ngx-mat-modal/lib/models/message-modal-data.model';
 import { Observable } from 'rxjs';
 import { ValidationSheetComponent } from '../components/validation-sheet/validation-sheet.component';
-import { ConfirmModalData } from '../models/confirm-modal-data.model';
 
 @Injectable()
 export class ModalService {

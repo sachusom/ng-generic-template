@@ -63,7 +63,7 @@ export class AllowOnlyNumbersDirective {
     }
 
     private monitorAutofill(): void {
-        this.autofillMonitor.monitor(this.el).subscribe(data => {
+        this.autofillMonitor.monitor(this.el).subscribe(() => {
             this.controlDir.control?.setValue(null);
         });
     }

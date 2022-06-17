@@ -28,7 +28,6 @@ const exportable = [
     PerfectScrollbarModule,
     ReactiveFormsModule,
     NgxSkeletonLoaderModule
-    // AvatarModule,
   ],
   exports: exportable,
 })

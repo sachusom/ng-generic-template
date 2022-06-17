@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { DevGuideComponent } from './dev-guide.component';
 
 describe('DevGuideComponent', () => {
@@ -8,9 +7,9 @@ describe('DevGuideComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DevGuideComponent ]
+      declarations: [DevGuideComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

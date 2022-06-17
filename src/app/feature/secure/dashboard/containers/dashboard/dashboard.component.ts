@@ -1,7 +1,5 @@
-import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Component } from '@angular/core';
 import { ComponentBase } from '@shared/abstracts/component-base';
-import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,9 +8,7 @@ import { map } from 'rxjs/operators';
 })
 export class DashboardComponent extends ComponentBase {
 
-  constructor(
-    private breakpointObserver: BreakpointObserver
-  ) {
+  constructor() {
     super();
   }
 

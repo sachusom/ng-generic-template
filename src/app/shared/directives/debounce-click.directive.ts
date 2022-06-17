@@ -7,8 +7,7 @@
  * <button nggtDebounceClick (debounceClick)="click()" [debounceTime]="700"></button>
  */
 import { Directive, EventEmitter, HostListener, Input, OnDestroy, OnInit, Output } from '@angular/core';
-import { Subject, Subscription } from 'rxjs';
-import { debounceTime } from 'rxjs/operators';
+import { debounceTime, Subject, Subscription } from 'rxjs';
 
 @Directive({
   selector: '[nggtDebounceClick]'
