@@ -18,7 +18,7 @@ export class ErrorInterceptor implements HttpInterceptor {
                     console.log(errorMsg);
                     return throwError(errorMsg);
                 })
-            )
+            );
     }
 }
 

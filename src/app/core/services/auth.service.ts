@@ -1,8 +1,7 @@
 /**
+ * Authentication service
  * @author Vishnu Somanath
  * @version 1.0.0
- * @return {void}
- * @example
  */
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';

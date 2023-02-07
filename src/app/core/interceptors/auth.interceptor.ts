@@ -19,11 +19,9 @@ export class AuthInterceptor implements HttpInterceptor {
     ) { }
 
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-
         const unProtectedResources = [''];
         const isUnProtectedResource = unProtectedResources.filter((x: string) => req.url.includes(x)).length > 0;
         const modifiedReq = isUnProtectedResource === true ? req : this.setHeader(req);
-
         return next.handle(modifiedReq);
     }
 

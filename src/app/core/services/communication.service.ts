@@ -35,15 +35,16 @@ export class CommunicationService {
 
   /* Public Methods */
   /**
-   * To call the API endpoints
+   * To call the GET endpoints
    * @param apiPath 
    * @param options 
    * @param loaderText 
    * @param hasAuth
    * @param doCache  
-   * @returns 
+   * @returns Observable<T>
    */
-  get<T>(apiPath: string, options: any = null,
+  get<T>(apiPath: string,
+    options: any = null,
     loaderText: string | any = null,
     hasAuth: boolean = true,
     doCache: boolean = false)
@@ -70,8 +71,17 @@ export class CommunicationService {
           })
         );
     }
-  }
+  };
 
+  /**
+   * To call the POST endpoints
+   * @param apiPath
+   * @param data 
+   * @param options 
+   * @param loaderText 
+   * @param hasAuth
+   * @returns Observable<T>
+   */
   post<T>(apiPath: string,
     data: any,
     options: any = null,
@@ -94,7 +104,21 @@ export class CommunicationService {
       );
   }
 
-  put<T>(apiPath: string, data: any, options: any = null, loaderText: string | any = null, hasAuth: boolean = true): Observable<T> {
+  /**
+   * To call the PUT endpoints
+   * @param apiPath
+   * @param data 
+   * @param options 
+   * @param loaderText 
+   * @param hasAuth
+   * @returns Observable<T>
+   */
+  put<T>(apiPath: string,
+    data: any,
+    options: any = null,
+    loaderText: string | any = null,
+    hasAuth: boolean = true)
+    : Observable<T> {
     const showLoader = loaderText ? true : false;
     if (showLoader) { this.showLoader(loaderText); }
     return this.getClient(hasAuth)
@@ -110,7 +134,21 @@ export class CommunicationService {
       );
   }
 
-  patch<T>(apiPath: string, data: any, options: any = null, loaderText: string | any = null, hasAuth: boolean = true): Observable<T> {
+  /**
+   * To call the PATCH endpoints
+   * @param apiPath
+   * @param data 
+   * @param options 
+   * @param loaderText 
+   * @param hasAuth
+   * @returns Observable<T>
+   */
+  patch<T>(apiPath: string,
+    data: any,
+    options: any = null,
+    loaderText: string | any = null,
+    hasAuth: boolean = true)
+    : Observable<T> {
     const showLoader = loaderText ? true : false;
     if (showLoader) { this.showLoader(loaderText); }
     return this.getClient(hasAuth)
@@ -126,7 +164,19 @@ export class CommunicationService {
       );
   }
 
-  delete<T>(apiPath: string, options: any = null, loaderText: string | any = null, hasAuth: boolean = true): Observable<T> {
+  /**
+   * To call the DELETE endpoints
+   * @param apiPath
+   * @param options 
+   * @param loaderText 
+   * @param hasAuth
+   * @returns Observable<T>
+   */
+  delete<T>(apiPath: string,
+    options: any = null,
+    loaderText: string | any = null,
+    hasAuth: boolean = true)
+    : Observable<T> {
     const showLoader = loaderText ? true : false;
     if (showLoader) { this.showLoader(loaderText); }
     return this.getClient(hasAuth)

@@ -1,8 +1,7 @@
 /**
+ * Service helps to cache the response of APIs
  * @author Vishnu Somanath
  * @version 1.0.0
- * @return {void}
- * @example
  */
 import { HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -22,6 +21,7 @@ export class RequestCacheService {
     if (!cached || !AppConfig.apiCaching.enable) {
       return undefined;
     }
+
     return cached.response;
   }
 
